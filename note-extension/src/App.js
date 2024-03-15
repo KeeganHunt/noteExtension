@@ -23,23 +23,30 @@
 // }
 
 // export default App;
+
 import logo from './logo.svg';
-import './App.css';
-import { Login } from "./Login";
-import { Register } from "./Register"
-import React, {useState} from "react";
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { GoogleLogin } from '@react-oauth/google';
+import Home from './components/Home';
+import SignUp from './components/SignUp';
 
-function App() {
-  const [currentForm, setCurrentForm] = useState("Login");
-
+const App = () => {
+  
   return (
-    <div className="App">
-      {
-        currentForm === "login" ? <Login /> : <Register/>
-      }
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} /> 
+        <Route path="/signup" element={<SignUp />} />
+        {/* Other routes */}
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
+
+
+
+
 
