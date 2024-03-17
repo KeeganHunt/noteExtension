@@ -21,11 +21,9 @@ const Home = () => {
   };
 
   return (
-    <div className="center-container">
-      <div className={"home-container"}>
-        <h1>WebNote Extention</h1>
-        <div>
-      <h2>Login</h2>
+    <div className="login-form">
+     
+      <h1>Login</h1>
       <form onSubmit={handleLoginClick}>
         <input
           type="text"
@@ -39,12 +37,11 @@ const Home = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-         <button onClick={handleLoginClick}>Login</button>
+         <button type='submit' onClick={handleLoginClick}>Login</button>
+         <button type='submit1' onClick={handleSignupClick}>Sign Up</button>
       </form>
-    </div>
-        <button onClick={handleSignupClick}>Sign Up</button>
-      </div>
-    </div>
+        </div>
+      
   );
 };
 
