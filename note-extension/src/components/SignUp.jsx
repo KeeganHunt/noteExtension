@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import "../styles/Register.css";
 import { useNavigate } from 'react-router-dom';
+import { GoogleLogin } from '@react-oauth/google';
+
+
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -9,6 +12,18 @@ const SignUp = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  
+
+  const responseGoogleSuccess = (response) => {
+    console.log('Google login success:', response);
+    navigate('/nav')
+    
+  };
+
+  const responseGoogleFailure = (response) => {
+    console.log('Google login failed:', response);
+    
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -57,6 +72,15 @@ const SignUp = () => {
           onChange={(e) => setConfirmPassword(e.target.value)}
         />
         <button type="submit">Sign Up</button>
+       
+        <GoogleLogin
+            className = "google-login-button"
+            buttonText="Sign Up with Google"
+            onSuccess={responseGoogleSuccess}
+            onFailure={responseGoogleFailure}
+            cookiePolicy={'single_host_origin'}
+          />
+       
       </form>
       </div>
   );

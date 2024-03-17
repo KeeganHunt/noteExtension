@@ -12,7 +12,7 @@ const Home = () => {
     // Add your login logic here
     console.log('Logging in with:', username, password);
     // Redirect to another page after successful login
-    navigate('/dashboard');
+    navigate('/nav');
   };
 
 
