@@ -6,6 +6,7 @@ import Home from './components/Home';
 import SignUp from './components/SignUp';
 import Nav from './components/Nav';
 
+
 const App = () => {
   
   return (
@@ -18,7 +19,7 @@ const App = () => {
       </Routes>
     </Router>
   );
-};
+}
 
 export default App;
 
