@@ -3,4 +3,4 @@
 "manifest_version" : 3,
 "background" : {"service_worker" : "background.js", "scripts" : ["background.js"] },
 "host_permissions" : ["<all_urls>"],
-"action" : {}}
+"action" : {"default_popup": "popup2.html"}}
